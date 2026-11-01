@@ -17,7 +17,7 @@ class Handler(BaseHTTPRequestHandler):
         self.wfile.write(data)
 
     def do_GET(self):
-        if self.path == "/health":
+        if self.path == "/healthz":
             self._send(200, "ok\n", "text/plain")
         elif self.path == "/":
             body = json.dumps({"app": "webapp", "version": VERSION})
